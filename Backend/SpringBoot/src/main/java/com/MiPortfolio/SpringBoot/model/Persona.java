@@ -20,22 +20,22 @@ public class Persona {
     @NotNull
     private String nombre;
     private String apellido;
-    private String mail;
-    private String teléfono;
-    private String presentación;
+    private String email;
     private String urlFoto;
+    private String presentacion;
+    private String telefono;
     
     public Persona(){
 }
  
-    public Persona(Long id, String nombre, String apellido, String mail, String teléfono, String presentación, String urlFoto){
+    public Persona(Long id, String nombre, String apellido, String email, String urlFoto, String presentacion, String telefono){
     this.id = id;
     this.nombre = nombre;
     this.apellido = apellido;
-    this.mail = mail;
-    this.teléfono = teléfono;
-    this.presentación = presentación;
+    this.email = email;
     this.urlFoto = urlFoto;
+    this.presentacion = presentacion;
+    this.telefono = telefono;
     }
 
 

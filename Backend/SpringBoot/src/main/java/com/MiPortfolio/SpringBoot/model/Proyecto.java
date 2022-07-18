@@ -20,16 +20,16 @@ public class Proyecto {
      
     @NotNull
     private String nombre;
-    private String descripción;
+    private String descripcion;
     
     
     public Proyecto(){
 }
  
-    public Proyecto(Long id, String nombre, String descripción){
+    public Proyecto(Long id, String nombre, String descripcion){
     this.id = id;
     this.nombre = nombre;
-    this.descripción = descripción;
+    this.descripcion = descripcion;
     }
 
 

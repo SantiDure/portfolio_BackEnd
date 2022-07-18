@@ -7,6 +7,7 @@ import com.MiPortfolio.SpringBoot.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -40,6 +41,11 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests().antMatchers("/auth/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/ver/personas").permitAll()
+                .antMatchers(HttpMethod.GET, "/ver/experiencias").permitAll()
+                .antMatchers(HttpMethod.GET, "/ver/proyectos").permitAll()
+                .antMatchers(HttpMethod.GET, "/ver/habilidades").permitAll()
+                .antMatchers(HttpMethod.GET, "/ver/estudios").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)

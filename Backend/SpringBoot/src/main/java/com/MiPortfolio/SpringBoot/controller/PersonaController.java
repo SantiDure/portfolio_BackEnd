@@ -6,6 +6,7 @@ import com.MiPortfolio.SpringBoot.model.Persona;
 import com.MiPortfolio.SpringBoot.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,13 @@ public class PersonaController {
     @Autowired
     private IPersonaService persoServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping ("/new/persona")
     public void agregarPersona (@RequestBody Persona pers) {
     persoServ.crearPersona(pers);
     }
+    
     
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/ver/personas")
@@ -35,6 +38,7 @@ public class PersonaController {
     return persoServ.verPersonas();
     }
     
+    
     @CrossOrigin(origins = "http://localhost:4200")
      @GetMapping ("/ver/persona/{id}")
     @ResponseBody
@@ -42,6 +46,7 @@ public class PersonaController {
     return persoServ.buscarPersona(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/delete/persona/{id}")
     public void borrarPersona (@PathVariable Long id){

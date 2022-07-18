@@ -22,7 +22,7 @@ public class Estudio {
      
     @NotNull
     private String nombreInstitución;
-    private String especialización;
+    private String especializacion;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaInicio;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -35,7 +35,7 @@ public class Estudio {
     public Estudio(Long id, String nombreInstitución, String especialización, Date fechaInicio, Date fechaFin){
     this.id = id;
     this.nombreInstitución = nombreInstitución;
-    this.especialización = especialización;
+    this.especializacion = especializacion;
     this.fechaInicio = fechaInicio;
     this.fechaFin = fechaFin;
     
