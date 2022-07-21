@@ -40,12 +40,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable().authorizeRequests().antMatchers("/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/ver/personas").permitAll()
-                .antMatchers(HttpMethod.GET, "/ver/experiencias").permitAll()
-                .antMatchers(HttpMethod.GET, "/ver/proyectos").permitAll()
-                .antMatchers(HttpMethod.GET, "/ver/habilidades").permitAll()
-                .antMatchers(HttpMethod.GET, "/ver/estudios").permitAll()
+        http.cors().and().csrf().disable().authorizeRequests().antMatchers("**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
