@@ -1,46 +1,24 @@
 
-package com.MiPortfolio.SpringBoot.model;
+package com.MiPortfolio.SpringBoot.Dto;
 
-import com.sun.istack.NotNull;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-
-@Entity
-public class Habilidad {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-     
-    @NotNull
+public class dtoHabilidad {
+  
     private String nombre;
     private String tiempoDeExperiencia;
     private Long porcentaje;
     
-    //Constructor 
-    public Habilidad(){
-}
+    //Constructor
 
-    public Habilidad(String nombre, String tiempoDeExperiencia, Long porcentaje) {
+    public dtoHabilidad() {
+    }
+
+    public dtoHabilidad(String nombre, String tiempoDeExperiencia, Long porcentaje) {
         this.nombre = nombre;
         this.tiempoDeExperiencia = tiempoDeExperiencia;
         this.porcentaje = porcentaje;
     }
- 
-    
     
     //Getter & Setter
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -65,7 +43,5 @@ public class Habilidad {
     public void setPorcentaje(Long porcentaje) {
         this.porcentaje = porcentaje;
     }
-
-    
     
 }

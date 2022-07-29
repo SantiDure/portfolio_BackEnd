@@ -6,10 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+
 @Entity
 public class Proyecto {
     
@@ -22,17 +20,42 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     
+    //Constructor
     
     public Proyecto(){
 }
  
-    public Proyecto(Long id, String nombre, String descripcion){
-    this.id = id;
+    public Proyecto(String nombre, String descripcion){
+  
     this.nombre = nombre;
     this.descripcion = descripcion;
     }
 
+//Getter & Setter
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
 }
 
