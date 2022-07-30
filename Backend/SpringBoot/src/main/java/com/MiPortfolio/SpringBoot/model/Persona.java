@@ -21,19 +21,21 @@ public class Persona {
     private String urlFoto;
     private String presentacion;
     private String telefono;
+    private String tituloProfesional;
     
     //Constructor
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String email, String urlFoto, String presentacion, String telefono) {
+    public Persona(String nombre, String apellido, String email, String urlFoto, String presentacion, String telefono, String tituloProfesional) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.urlFoto = urlFoto;
         this.presentacion = presentacion;
         this.telefono = telefono;
+        this.tituloProfesional = tituloProfesional;
     }
 
 
@@ -93,6 +95,14 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getTituloProfesional() {
+        return tituloProfesional;
+    }
+
+    public void setTituloProfesional(String tituloProfesional) {
+        this.tituloProfesional = tituloProfesional;
     }
     
 

@@ -20,7 +20,6 @@ public class PersonaService {
          return persoRepo.findAll();
      }
 
-    
        public Optional<Persona> getOne(Long id){
          return persoRepo.findById(id);
      }
